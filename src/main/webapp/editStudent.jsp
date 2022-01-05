@@ -35,10 +35,18 @@
         <label>nhap lai email</label>
         <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="enter email">
     </div>
-    <%--    <div class="form-check">--%>
-    <%--        <input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
-    <%--        <label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
-    <%--    </div>--%>
+
+    <div class="form-group">
+        <label>chon lop</label>
+        <select name="idCategory">
+            <c:forEach items="${classrooms}" var="p">
+                <option value="${p.idClassRoom}">
+                    <p>${p.nameClassRoom}</p>
+                </option>
+            </c:forEach>
+        </select>
+
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>

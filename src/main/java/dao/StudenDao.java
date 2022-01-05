@@ -37,8 +37,8 @@ public class StudenDao {
             preparedStatement.setString(5, student.getEmail());
             preparedStatement.setInt(6, student.getIdClasRoom());
             preparedStatement.execute();
-        }catch (SQLException e){
-            printSQLException(e);
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -71,7 +71,7 @@ public class StudenDao {
 
  public List<Student> searchByName(String findname) {
         String getall = "select student.* , clasroom.nameClasRoom from student\n" +
-                " join clasroom on student.idClasRoom = clasroom.idClasRoom where student.name like '%" + findname +"%\'";
+                " join clasroom on student.idClasRoom = clasroom.idClasRoom where student.name like '%" + findname +"%'";
 
 
         try {
@@ -129,21 +129,6 @@ public class StudenDao {
 
 
 
-    }
-    private void printSQLException(SQLException ex) {
-        for (Throwable e : ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
     }
 
 }
