@@ -1,14 +1,6 @@
 package model;
 
 public class Student {
-//
-//    id int AI PK
-//    name varchar(100)
-//    ngaysinh date
-//    address varchar(255)
-//    phoneNumber varchar(200)
-//    email varchar(50)
-//    idClasRoom
 
     private int id;
     private String name;
@@ -41,6 +33,7 @@ public class Student {
     }
 
     public Student(int id, String name, String ngaysinh, String address, String phoneNumber, String email) {
+        this.id = id;
         this.name = name;
         this.ngaysinh = ngaysinh;
         this.address = address;

@@ -121,7 +121,7 @@ public class ServletStudent extends HttpServlet {
         String address = request.getParameter("address");
         String phoneNumber = request.getParameter("phoneNumber");
         String email = request.getParameter("email");
-
+        int idCategory = Integer.parseInt(request.getParameter("idCategory"));
 
         Student student = (new Student(id, name, date, address,phoneNumber,email));
         studenService.edit(id, student);

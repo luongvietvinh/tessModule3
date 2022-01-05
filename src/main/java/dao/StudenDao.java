@@ -27,7 +27,7 @@ public class StudenDao {
 
 
     public void createStudentDao(Student student) {
-        String saveCustomer = "INSERT INTO customer (full_name,passwords,email,phone,address,id_role,img) VALUES (?,?,?,?,?,?,?,)";
+        String saveCustomer = "INSERT INTO student (name,ngaysinh,address,phoneNumber,email,idClasRoom) VALUES (?,?,?,?,?,?)";
         try{
             PreparedStatement preparedStatement = getConnection().prepareStatement(saveCustomer);
             preparedStatement.setString(1, student.getName());
